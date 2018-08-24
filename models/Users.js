@@ -2,8 +2,8 @@
     //Here could have any connection with an data base.
     //--------------------------------------------------
 
-    //This is a static array, where storage the data.
-    var users = ['Igor Martins','Juliana Oliveira'];
+    //This is a array, where storage the data.
+    var users = ['Igor','Juliana'];
     //This method is resposable by storage data in array.
     exports.save = function(req,res){
         users.push(req.body.name);
