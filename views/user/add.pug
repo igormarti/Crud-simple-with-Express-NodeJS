@@ -1,0 +1,12 @@
+extends ..\layout.pug
+
+block content
+
+        h1= 'Adicionar Usuário' 
+        div
+            form(action="/user/add", method="post")
+                    label(for="name") Nome:
+                        <br>
+                        input(type="text",name="name",id="name",placeholder="Seu nome")
+                        <br><br>
+                        button(type="submit") Salvar    
