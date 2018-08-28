@@ -12,7 +12,9 @@ block content
             a(href="")  
                 li=user   
                     a(href=`/user/delete/${user}`) 
-                       button() Remover  
+                       button() Remover
+                    a(href=`/user/edit/${user}`) 
+                       button() Editar     
                        <br><br> 
          else 
                 li='Nenhum Usuário cadastrado'                                    

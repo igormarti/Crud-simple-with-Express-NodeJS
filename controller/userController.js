@@ -12,13 +12,23 @@
     exports.create = function(req,res){
         res.render('user/add');
     };
+    //Method to render the edit view.
+    exports.edit = function(req,res){
+        let u = user.get(req.params.name);
+        res.render('user/edit',{u});
+    };
     //Method to save user, after render in index view.
     exports.add = function(req,res){
-        users = user.save(req,res);
-        res.render('user/index',{users});
+        user.save(req,res);
+        res.redirect('/users');
+    };
+    //Method to edit user, after render in index view.
+    exports.alter = function(req,res){
+        user.update(req,res);
+        res.redirect('/users');
     };
     //Method to delete a user and render index view.
     exports.delete = function(req,res){
-        users = user.remove(req,res);
-        res.render('user/index',{users});
+        user.remove(req,res);
+        res.redirect('/users');
     };

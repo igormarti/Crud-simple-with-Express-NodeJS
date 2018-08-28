@@ -18,7 +18,9 @@
         //Routers to users.  
             router.get('/users',function(req,res){userController.index(req,res)});
             router.get('/user/create',function(req,res){userController.create(req,res)});
+            router.get('/user/edit/:name',function(req,res){userController.edit(req,res)});
             router.post('/user/add',function(req,res){userController.add(req,res)});
+            router.post('/user/alter',function(req,res){userController.alter(req,res)});
             router.get('/user/delete/:name',function(req,res){userController.delete(req,res)});
 
         //Routes to basic informations.   

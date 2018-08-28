@@ -1,0 +1,17 @@
+extends ..\layout.pug
+
+
+block content
+
+        h1= 'Editar'
+          <br>
+
+        div
+
+            form(action="/user/alter", method="post")
+                    label(for="name") Nome:
+                        <br>
+                        input(type="text",name="name",id="name",placeholder="Seu nome",value=u)
+                        input(type="hidden",name="nameold",id="nameold",value=u)
+                        <br><br>
+                        button(type="submit") Alterar     

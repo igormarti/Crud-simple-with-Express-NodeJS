@@ -11,7 +11,7 @@
     };
     //This method update the data of array.
     exports.update = function(req,res){
-        var i = users.indexOf(req.name.toString());
+        var i = users.indexOf(req.body.nameold);
         users[i] = req.body.name;
         return users;
     };
