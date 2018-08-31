@@ -7,12 +7,14 @@
     //This method is resposable by storage data in array.
     exports.save = function(req,res){
         users.push(req.body.name);
+        sort(users);
         return users;
     };
     //This method update the data of array.
     exports.update = function(req,res){
         var i = users.indexOf(req.body.nameold);
         users[i] = req.body.name;
+        sort(users);
         return users;
     };
     //This method get a user specific of array.
@@ -22,11 +24,19 @@
     };
     //This method get all the data of array.
     exports.list = function(){
+        sort(users);
         return users;
     };
     //This method remove one user of array.
     exports.remove = function(req,res){
         let i = users.indexOf(req.params.name.toString());
         users.splice(i,1);
+        sort(users);
         return users;
     };
+
+    var sort = function(users){
+        users.sort();
+    }
+
+    
