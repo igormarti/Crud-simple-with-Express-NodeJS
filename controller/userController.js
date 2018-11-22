@@ -17,6 +17,14 @@
     
     exports.add = function(req,res){//Method to save user, after render in index view.
         user.save(req,res);//Store user.
+
+        res.io.on('connection',function(socket){
+            res.io.sockets.emit('returnToUser',"Foi Adicionou mais um usuário")
+            //socket.broadcast.emit('returnToUser',"Foi Adicionou mais um usuário");
+            socket.emit('saveUser',"Usuário adicionado com sucesso");
+            socket.on('disconnect', function () { });
+        })
+        
         res.redirect('/users');//Redirecting to users view.
     };
     

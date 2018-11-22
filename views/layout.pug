@@ -3,5 +3,25 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    script(src="/jquery/dist/jquery.js")
+    script(src="/socket.io/socket.io.js")
+    script.
+        var socket = io('//localhost:3000');
+
+        function sendSave(){
+
+            socket.on('saveUser', function(data){
+                 alert(data);
+            });
+
+        }
+
+        socket.on('returnToUser',function(data){
+                    alert(data);
+        }); 
+
+       
+        
+    body
     block content
+     

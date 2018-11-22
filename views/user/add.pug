@@ -4,9 +4,13 @@ block content
 
         h1= 'Adicionar Usuário' 
         div
-            form(action="/user/add", method="post")
+            form(action="/user/add", method="post",name="form",id="form")
                     label(for="name") Nome:
                         <br>
                         input(type="text",name="name",id="name",placeholder="Seu nome")
                         <br><br>
-                        button(type="submit") Salvar    
+                        button(type="submit",onclick="javascript:sendSave();") Salvar 
+        
+          
+                               
+                                                  
