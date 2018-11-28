@@ -23,8 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/node_modules'));  
 
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
 
 app.use(function(req, res, next){
   res.io = io;

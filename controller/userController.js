@@ -19,13 +19,13 @@
         user.save(req,res);//Store user.
 
         res.io.on('connection',function(socket){
-            res.io.sockets.emit('returnToUser',"Foi Adicionou mais um usuário")
+            res.io.sockets.emit('returnToUser',{'msg':"Foi Adicionou mais um usuário",'name':req.body.name})
             //socket.broadcast.emit('returnToUser',"Foi Adicionou mais um usuário");
             socket.emit('saveUser',"Usuário adicionado com sucesso");
             socket.on('disconnect', function () { });
         })
         
-        res.redirect('/users');//Redirecting to users view.
+        res.redirect('/users');//Redirecting to users view. 
     };
     
     exports.alter = function(req,res){//Method to edit user, after render in index view.

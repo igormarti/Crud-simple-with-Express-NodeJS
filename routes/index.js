@@ -5,8 +5,6 @@
     //Importing the express.
     var express = require('express');
     var router = express.Router();
-    require("dotenv-safe").load();
-    var jwt = require('jsonwebtoken');
 
     //Importing users controller.
     var userController = require('../controller/userController');
